@@ -15,7 +15,13 @@ function eventListener(){
     document.querySelector('.video__switch').addEventListener('click', function(){
         ui.videoControl();
     })
+    // submit the form
+    document.querySelector('.drink-form').addEventListener('submit', function(event){
+        
+    })
 }
+
+
 
  function UI(){
 

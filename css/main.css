@@ -5,7 +5,7 @@ body {
 }
 
 :root {
-    --brightYellow: #E3B505;
+    --brightYellow: #e3b505;
     --darkBrown: #BB9457;
     --yellow: rgba(242, 180, 80);
     --brown: #382923;
@@ -61,6 +61,20 @@ body {
 .section-title__name{
     font-size: 3rem;
     text-transform: capitalize;
+    text-shadow: 3px 3px 0px #e7eef1, 8px 8px 0px rgba(0,0,0,0.1);
+}
+
+.section-title__underline{
+    background: var(--yellow);
+    width: 5rem;
+    height: 0.25rem;
+}
+
+.section-title__text{
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    color: var(--grey);
 }
 
 /*end of global style*/
@@ -112,6 +126,22 @@ body {
     font-size: 4rem;
     text-transform: capitalize;
     color: var(--brightYellow);
+    -webkit-transform: skew(-5deg, -5deg) rotate(5deg);
+    transform: skew(-5deg, -5deg) rotate(5deg);
+    -webkit-transform-origin: center center;
+    transform-origin: center center; 
+    text-shadow: 1px 1px #b89300,
+                 2px 2px #b89300,
+                 3px 3px #b89300,
+                 4px 4px #b89300,
+                 5px 5px #b89300,
+                 6px 6px #b89300,
+                 7px 7px #b89300,
+                 8px 8px #9c7d00,
+                 9px 9px #9c7d00,
+                 10px 10px #9c7d00,
+                 11px 11px 15px rgba(0,0,0,0.5);
+
 }
 
 @media screen and (min-width:768px){
@@ -276,8 +306,125 @@ body {
 
 /* about */
 
+.about-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
+    grid-gap: 2rem;
+}
+
 .about__img-item{
     width: 100%;
     display: block;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 768px){
+    .about__img-special{
+        order: -1;
+    }
+    .about-container{
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+/*drink section*/
+
+.drink{
+    background: var(--brown);
+    color: var(--brightYellow);
+    text-transform: capitalize;
+}
+
+.drink-form,.drink-card{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 70%;
+    justify-content: center;
+    grid-row-gap: 1.25rem;
+}
+
+.drink-form__feedback{
+    border: 0.1rem solid var(--brightYellow);
+    padding: 0.25rem;
+    display: none;
+}
+
+.error{
+    display: block;
+    color: red;
+    border-color: red;
+}
+
+.succes{
+    display: block;
+    color: green;
+    border-color: green;
+}
+
+.drink-form__title,.drink-card__title{
+    font-size: 3rem;
+    text-shadow: 3px 3px 0px #e7eef1, 8px 8px 0px rgba(0,0,0,0.1);
+}
+
+.input-name,.input-lastname,.input-email{
+    width: 100%;
+}
+
+.input-name,.input-lastname,.input-email,.input-submit{
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(111,87,77,0.6);
+    color: var(--darkBrown);
+    border: none;
+    outline: none;
+}
+
+.input-name::placeholder,.input-lastname::placeholder,.input-email::placeholder{
+    color: var(--darkBrown);
+    text-transform: capitalize;
+}
+
+.input-submit{
+    background: var(--yellow);
+    color: var(--black);
+    transition: all 0.5s linear;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.input-submit:hover{
+    opacity: 0.8;
+}
+
+.drink-card__list{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 2rem;
+}
+
+.person{
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    text-align: left;
+    grid-gap: 1rem;
+    border: 0.1rem solid rgba(111,87,77,0.6);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.person__thumbnail{
+    border-radius: 50%;
+}
+
+@media screen and (min-width:768px){
+    .drink-card__list{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
 }
 
